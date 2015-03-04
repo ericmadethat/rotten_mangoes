@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all.page(params[:page]).per(10)
+    @users = User.all.page(params[:page]).per(3)
   end
 
   def show
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:id]) if params[:id]
+    @user = User.new
   end
 
   def create

@@ -1,18 +1,12 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, except: [:index, :new, :create]
+
   def index
     @movies = Movie.all
   end
 
-  def show
-    @movie = Movie.find(params[:id])
-  end
-
   def new
     @movie = Movie.new
-  end
-
-  def edit
-    @movie = Movie.find(params[:id])
   end
 
   def create
@@ -26,8 +20,6 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie = Movie.find(params[:id])
-
     if @movie.update_attributes(movie_params)
       redirect_to movie_path(@movie)
     else
@@ -36,17 +28,20 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to movies_path
   end
-
 
   protected
   def movie_params
     params.require(:movie).permit(
       :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description, :image, :remote_image_url
     )
+  end
+
+
+  def set_movie
+    @movie = Movie.find(params[:id]) if params[:id]
   end
 
 end

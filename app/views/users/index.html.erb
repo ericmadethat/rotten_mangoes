@@ -1,6 +1,6 @@
 
 <%= paginate @users %>
-<p>You've reached admin/users/index.html.erb</p>
+<p>You've reached users/index.html.erb</p>
 <% @users.each do |user| %>
   <p><%= link_to user.firstname, user_path(user) %></p>
   <% end %>

@@ -14,7 +14,9 @@
 </head>
 <body>
 <div class="container">
-<div class="custom-header"><h1>Rotten Mangoes</h1></div>
+<div class="custom-header">
+<%= link_to "Rotten Mangoes", movies_path %>
+</div>
 
 
   <% flash.each do |key, value| %>
@@ -25,3 +27,4 @@
 </div>
 </body>
 </html>
+

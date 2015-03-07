@@ -23,6 +23,23 @@ class Movie < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def self.search(title, director, runtime)
+    if title || director || runtime
+      min_runtime = 0
+      max_runtime = 240
+      case runtime
+      when 2
+        max_runtime = 90
+      when 3
+        min_runtime = 90
+        max_runtime = 120
+      when 4
+        min_runtime = 120
+      end
+      @movies = Movie.where("title LIKE ? AND director LIKE ? AND runtime_in_minutes BETWEEN ? AND ?", "%#{title}%", "%#{director}%", min_runtime, max_runtime)
+    end
+  end
+
   def review_average
     reviews.sum(:rating_out_of_ten)/reviews.size if reviews.size != 0
   end

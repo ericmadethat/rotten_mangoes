@@ -27,6 +27,7 @@ class Movie < ActiveRecord::Base
     if title || director || runtime
       min_runtime = 0
       max_runtime = 240
+      
       case runtime
       when 2
         max_runtime = 90

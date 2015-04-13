@@ -1,11 +1,3 @@
-/*.custom-header {
-	background-color: #E3E3E3;
-	color: white;
-	padding: 20px;
-	margin: 0 0 20px 0;
-	font-size: 30px;
-}*/
-
 html {
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
@@ -19,7 +11,7 @@ html {
 }
 
 a {
-	color: #E83A38;
+	color: #8A92FA;
 	text-decoration: none;
 }
 
@@ -35,11 +27,11 @@ button.btn.btn-success.btn-lg a:visited  {
 }
 
 a:visited {
-	color: #E83A38;
+	color: #8A92FA;
 }
 
 a:hover {
-	color: #E83A38;
+	color: #8A92FA;
 	font-weight: 300;
 	text-decoration: none;
 }
@@ -103,14 +95,14 @@ p {
 }
 
 .header-home {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	float: left;
 }
 
 .login {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	float: right;
 }
 
@@ -118,12 +110,25 @@ header {
 	background: transparent;
 }
 
+header div.container {
+	height: 40px;
+}
+
 .custom-jumbo h1 {
-	letter-spacing: 3px;
-	font-size: 3.5em;	
+	letter-spacing: 14px;
+	font-size: 4em;	
 	font-weight: 100;
+	margin-top: 110px;
+}
+
+div.jumbotron.custom-jumbo {
+	background: linear-gradient(black, #1A1A1A);
+	height: 550px;
 }
 
 .container.search {
-	margin-top: 80px;
+	margin-top: 10px;
+}
+.container.search h1 {
+	font-size: 3em;
 }

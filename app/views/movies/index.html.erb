@@ -1,21 +1,30 @@
-<%= link_to "Submit a movie!", new_movie_path %>
-<hr>
+<div class="jumbotron custom-jumbo">
+	<div class="container">
+  	<h1>Rotten Mangoes</h1>
+  	<p>Submit & review your favorite movies</p>
+		<button class="submit btn btn-success btn-lg" role="button"><%= link_to "Submit a movie!", new_movie_path %></button>
+	</div>  
+</div>
+
+<div class="container search">
+	<%= form_tag("/", method: "get") do %>
+	<h1>Search: </h1>
+	<%= label_tag("Title: ") %>
+	<%= text_field_tag(:title) %>
+
+	<%= label_tag("Director: ") %>
+	<%= text_field_tag(:director)%>
+
+	<%= label_tag("Runtime: ") %>
+	<%= select_tag(:runtime_in_minutes, options_for_select([['-', 1], ['Under 90 minutes', 2], ['Between 90 and 120 minutes', 3], ['Over 120 minutes', 4]])) %>
+	<%= submit_tag("Search") %>
+	<% end %><br />
+</div>
+
+<div class="container">
 	<div class="row">
-		<div class = "col-lg-12">
-			<%= form_tag("/", method: "get") do %>
-	  	<h1><%= label_tag("Search for:") %></h1>
-	  	<%= label_tag("Title") %>
-	  	<%= text_field_tag(:title) %>
-
-	  	<%= label_tag("Director") %>
-	  	<%= text_field_tag(:director)%>
-
-	  	<%= select_tag(:runtime_in_minutes, options_for_select([['-', 1], ['Under 90 minutes', 2], ['Between 90 and 120 minutes', 3], ['Over 120 minutes', 4]])) %>
-	  	<%= submit_tag("Search") %>
-			<% end %><br />
-		</div>
 		<% @movies.each do |movie| %>
 			<%= render 'movie', movie: movie %>
-	  <% end %>
+		<% end %>
+	</div>
 </div>
-<hr>

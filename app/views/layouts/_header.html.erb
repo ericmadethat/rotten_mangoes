@@ -1,0 +1,20 @@
+<header>
+	<div class="container">
+	  <div class="header-home">
+	  	<%= link_to "Rotten Mangoes", movies_path %>
+	  </div>
+
+		<div class="login">    
+	    <% if current_user && current_user.admin %>
+	      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path, method: :delete %>) (<%= link_to "Admin Dashboard", admin_users_path %>)
+	    
+	    <% elsif current_user %>
+	           
+	      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path, method: :delete %>)
+	     
+	    <% else %>
+	      <%= link_to "Log In", new_session_path %> | (<%= link_to "Sign Up", new_user_path %>)
+	    <% end %>
+		</div>
+	</div>
+</header>

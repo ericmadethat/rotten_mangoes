@@ -11,8 +11,9 @@ html {
 }
 
 a {
-	color: #8A92FA;
+	color: white;
 	text-decoration: none;
+	font-weight: 300;
 }
 
 button.btn.btn-success.btn-lg {
@@ -27,13 +28,13 @@ button.btn.btn-success.btn-lg a:visited  {
 }
 
 a:visited {
-	color: #8A92FA;
+	color: white;
+	font-weight: 300;
 }
 
 a:hover {
-	color: #8A92FA;
+	color: white;
 	font-weight: 300;
-	text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, label {
